@@ -1,0 +1,87 @@
+INTRODUCTION SEQUENCE
+
+git commit
+git commit
+-----------------------------
+git branch bugFix
+git checkout bugFix
+-----------------------------
+git branch bugFix
+git checkout bugFix
+git commit
+git checkout master
+git commit
+git merge bugFix
+-----------------------------
+git branch bugFix
+git checkout bugFix
+git commit
+git checkout master
+git commit
+git checkout bugFix
+git rebase master
+========================================================
+
+RAMPING UP
+git checkout C4
+-----------------------------
+git checkout C4^
+-----------------------------
+git branch -f master HEAD~1
+git checkout master
+git branch -f bugFix HEAD~1
+git checkout master
+git branch -f master C6
+git checkout HEAD~3
+-----------------------------
+git reset pushed
+git branch -f local pushed~1
+git checkout pushed
+git revert pushed
+========================================================
+
+MOVING WORK AROUND
+git cherry-pick C3 C4 C7
+-----------------------------
+git rebase -i HEAD~4
+Reorder and click Pick against C2 alone
+========================================================
+
+A MIXED BAG
+git rebase -i HEAD~3
+Click Pick against C2 and C3
+git branch -f master C4'
+-----------------------------
+git rebase -i HEAD~2
+Rearrange and click continue
+git commit --amend
+git rebase -i HEAD~2
+Rearrance and click continue
+git branch -f master caption
+-----------------------------
+git checkout master
+git cherry-pick newImage
+git commit --amend
+git cherry-pick caption
+-----------------------------
+git tag v0 C1
+git tag v1 C2
+git checkout v1
+-----------------------------
+git describe side
+git commit
+========================================================
+
+ADVANCED TOPICS
+git rebase master bugFix
+git rebase bugFix side
+git rebase side another
+git rebase another master
+-------------------------
+git branch bugWork master^^2^
+--------------------------
+git checkout one
+git cherry-pick C4 C3 C2
+git checkout two
+git cherry-pick C5 C4 C3 C2
+git branch -f three C2
